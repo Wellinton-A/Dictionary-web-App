@@ -14,10 +14,10 @@ import { DarkModeService } from '../../services/dark-mode.service';
   animations: [
     trigger('darkModeSearchBarBg', [
       state('true', style({
-        backgroundColor: '#1F1F1F'
+        backgroundColor: '#1F1F1F',
       })),
       state('false', style({
-        backgroundColor: '#F4F4F4'
+        backgroundColor: '#F4F4F4',
       })),
       transition('false <=> true', animate('0.5s'))
     ]),

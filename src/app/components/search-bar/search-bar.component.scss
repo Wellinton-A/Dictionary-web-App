@@ -11,15 +11,15 @@
   align-items: center;
 
   margin: 51.5px auto 0;
-  padding: 19px 23px;
+  padding: 20px 24px;
 
   background-color: $tertiary-grey;
 
   max-width: 736px;
   border-radius: 16px;
-  border: solid 1px $tertiary-grey;
+  border: none;
 
-  transition: border 0.5s;
+  transition: border 0.5s ease;
 
   &:focus-within {
     border: solid 1px $purple;
