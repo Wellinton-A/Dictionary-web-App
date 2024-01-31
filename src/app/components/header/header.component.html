@@ -1,0 +1,19 @@
+<header class="header-section">
+  <div class="logo">
+    <img ngSrc="./assets/images/logo.svg" alt="disctionary logo" width="32" height="36.5" >
+  </div>
+  <div class="config">
+    <div class="select-font">
+      <span [@darkModeToggleTextHeader]="darkMode()">Sans Serif</span>
+      <img ngSrc="./assets/images/icon-arrow-down.svg" alt="arrow down icon" width="14" height="8">
+    </div>
+    <div (click)="darkModeToggle()" class="toggle-rect" [@darkModeToggleRect]="darkMode()">
+      <div class="toggle-circ" [@darkModeToggle]="darkMode()"></div>
+    </div>
+    @if(darkMode()) {
+      <img ngSrc="./assets/images/icon-moon-darkmode.svg" alt="icon moon dark mode" width="20" height="20">
+    } @else {
+      <img ngSrc="./assets/images/icon-moon.svg" alt="icon moon light mode" width="20" height="20">
+    }
+  </div>
+</header>

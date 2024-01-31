@@ -1,0 +1,51 @@
+@import '../../../color-variables.scss';
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 736px;
+  margin: 0 auto;
+  padding-top: 58px;
+
+  .config {
+    display: flex;
+  }
+}
+
+.select-font {
+  font-size: 1.125rem;
+  line-height: 24px;
+  font-weight: 700;
+  color: $tertiary-black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 0 26px;
+  margin-right: 26px;
+
+  cursor: pointer;
+  border-right: 1px solid $secondary-grey;
+}
+
+.toggle-rect {
+  min-width: 40px;
+  height: 20px;
+  margin-right: 26px;
+
+  border-radius: 10px;
+  background-color: #979797;
+
+  cursor: pointer;
+}
+
+.toggle-circ {
+  width: 14px;
+  height: 14px;
+  margin: 3px;
+  background-color: $white;
+  border-radius: 50%;
+}
