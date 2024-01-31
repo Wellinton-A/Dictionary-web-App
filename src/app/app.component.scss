@@ -5,8 +5,8 @@
   width: 100vw;
   height: 1250px;
 
-  @media (max-width: 1981px) {
-    height: 1580;
+  @media (min-width: 1981px) {
+    height: 1580px;
   }
 }
 
