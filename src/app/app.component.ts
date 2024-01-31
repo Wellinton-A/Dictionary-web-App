@@ -30,9 +30,10 @@ import { DarkModeService } from './services/dark-mode.service';
           query('@darkModeSearchBarTxt', animateChild(), { optional: true }),
           query('@darkModeSearchBarBg', animateChild(), { optional: true }),
           query('@darkModeToggleRect', animateChild(), { optional: true }),
-          query('@darkModeText', animateChild(), { optional: true }),
           query('@darkModeMoonIcon', animateChild(), { optional: true }),
           query('@darkModeToggle', animateChild(), { optional: true }),
+          query('@darkModeText', animateChild(), { optional: true }),
+          query('@darkModeLine', animateChild(), { optional: true }),
         ])
       ])
     ]),

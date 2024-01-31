@@ -17,6 +17,15 @@ import { DarkModeService } from '../../services/dark-mode.service';
         color: '#2D2D2D'
       })),
       transition('false <=> true', animate('0.5s'))
+    ]),
+    trigger('darkModeLine', [
+      state('true', style({
+        borderColor: '#3A3A3A'
+      })),
+      state('false', style({
+        borderColor: '#E9E9E9'
+      })),
+      transition('false <=> true', animate('0.5s')),
     ])
   ]
 })

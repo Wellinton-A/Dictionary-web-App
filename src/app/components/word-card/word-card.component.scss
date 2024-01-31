@@ -36,3 +36,22 @@
   fill: #FFFFFF;
   opacity: 1;
 }
+
+.noun-container {
+  max-width: 736px;
+  margin: 40px auto;
+
+}
+
+.noun-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.line {
+  height: 14px;
+  width: 656px;
+  border-top: solid .3px $secondary-grey;
+  margin-left: 20px;
+}
