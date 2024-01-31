@@ -1,0 +1,39 @@
+@import '../../../typograph.scss';
+@import '../../../color-variables.scss';
+
+.play-icon {
+  cursor: pointer;
+}
+
+.play-word-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 736px;
+  margin: 0 auto;
+
+  .phonetic {
+    color: $purple;
+  }
+}
+
+.play-container {
+  position: relative;
+  width: 75px;
+  height: 75px;
+}
+
+.play-icon {
+  transition: fill 0.5s ease, opacity 0.5s ease;
+}
+
+.play-container:hover .play-icon circle {
+  fill: #A445ED;
+  opacity: 1;
+}
+
+.play-container:hover .play-icon path {
+  fill: #FFFFFF;
+  opacity: 1;
+}

@@ -11,13 +11,19 @@
   align-items: center;
 
   margin: 51.5px auto 0;
-  padding: 20px 24px;
+  padding: 19px 23px;
 
   background-color: $tertiary-grey;
 
   max-width: 736px;
   border-radius: 16px;
+  border: solid 1px $tertiary-grey;
 
+  transition: border 0.5s;
+
+  &:focus-within {
+    border: solid 1px $purple;
+  }
 }
 
 .main-search {
@@ -32,6 +38,8 @@
     outline: none;
   }
 }
+
+
 
 .search-icon {
   cursor: pointer;
