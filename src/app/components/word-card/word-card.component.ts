@@ -1,11 +1,14 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, inject } from '@angular/core';
 import { DarkModeService } from '../../services/dark-mode.service';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'word-card',
   standalone: true,
-  imports: [],
+  imports: [
+    NgOptimizedImage
+  ],
   templateUrl: './word-card.component.html',
   styleUrl: './word-card.component.scss',
   animations: [

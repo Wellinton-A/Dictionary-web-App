@@ -55,3 +55,67 @@
   border-top: solid .3px $secondary-grey;
   margin-left: 20px;
 }
+
+.meaning-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+
+  h3 {
+    margin-bottom: 25px;
+  }
+
+  ul li {
+    margin-left: 42px;
+    margin-bottom: 12px;
+    padding-left: 10px;
+  }
+
+  ul li::marker {
+    color: $purple;
+  }
+
+  span {
+    color: $primary-grey;
+    margin-left: 50px;
+  }
+}
+
+.synonyms-container {
+  display: flex;
+  margin-top: 28px;
+  align-items: center;
+  margin-bottom: 40px;
+
+  h3 {
+    margin-right: 22px;
+  }
+
+  span {
+    color: $purple;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.source-container {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  padding-top: 20px;
+
+  border-top: solid 1px $secondary-grey;
+
+  h4 {
+    margin-right: 20px;
+  }
+
+  a {
+    margin-right: 10px;
+  }
+}
+
+.source-title {
+  color: $primary-grey;
+
+}
