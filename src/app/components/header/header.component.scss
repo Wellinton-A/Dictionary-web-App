@@ -1,6 +1,12 @@
 @import '../../../color-variables.scss';
 
 .header-section {
+  position: relative;
+  max-width: 736px;
+  margin: 0 auto;
+}
+
+.head {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,6 +17,7 @@
 
   .config {
     display: flex;
+    justify-self: flex-end;
   }
 }
 

@@ -2,12 +2,14 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { NgOptimizedImage } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { DarkModeService } from '../../services/dark-mode.service';
+import { FontSelectorComponent } from '../font-selector/font-selector.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    FontSelectorComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
