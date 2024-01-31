@@ -5,7 +5,7 @@
   width: 100vw;
   height: 1250px;
 
-  @media (min-width: 1981px) {
+  @media (max-width: 1981px) {
     height: 1580;
   }
 }
