@@ -26,10 +26,12 @@ import { DarkModeService } from './services/dark-mode.service';
     trigger('darkModeToggleGroup', [
       transition('false <=> true', [
         group([
-          query('@darkModeToggle', animateChild(), { optional: true }),
-          query('@darkModeToggleRect', animateChild(), { optional: true }),
           query('@darkModeToggleTextHeader', animateChild(), { optional: true }),
+          query('@darkModeSearchBarTxt', animateChild(), { optional: true }),
           query('@darkModeSearchBarBg', animateChild(), { optional: true }),
+          query('@darkModeToggleRect', animateChild(), { optional: true }),
+          query('@darkModeMoonIcon', animateChild(), { optional: true }),
+          query('@darkModeToggle', animateChild(), { optional: true }),
         ])
       ])
     ]),

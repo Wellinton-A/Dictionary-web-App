@@ -1,6 +1,6 @@
-import { animate, animateChild, group, query, state, style, transition, trigger } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { NgOptimizedImage } from '@angular/common';
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { DarkModeService } from '../../services/dark-mode.service';
 
 @Component({
@@ -36,6 +36,15 @@ import { DarkModeService } from '../../services/dark-mode.service';
       })),
       state('false', style({
         color: '#2D2D2D'
+      })),
+      transition('false <=> true', animate('0.5s'))
+    ]),
+    trigger('darkModeMoonIcon', [
+      state('true', style({
+        stroke: '#A445ED'
+      })),
+      state('false', style({
+        stroke: '#838383'
       })),
       transition('false <=> true', animate('0.5s'))
     ])
