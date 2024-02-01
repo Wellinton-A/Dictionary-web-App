@@ -4,7 +4,7 @@
   [@darkModeText]="darkMode()"
   [@fontSelector]="fontSelector()"
   class="font-selector">
-  <span class="inter">Sans Serif</span>
-  <span class="lora">Serif</span>
-  <span class="inconsolata">Mono</span>
+  <span (click)="selectFont($event)" class="inter">Sans Serif</span>
+  <span (click)="selectFont($event)" class="lora">Serif</span>
+  <span (click)="selectFont($event)" class="inconsolata">Mono</span>
 </div>

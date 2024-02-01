@@ -4,6 +4,7 @@ import { Component, inject } from '@angular/core';
 import { DarkModeService } from '../../services/dark-mode.service';
 import { FontSelectorComponent } from '../font-selector/font-selector.component';
 import { FontSelectorToggleService } from '../../services/font-selector-toggle.service';
+import { GlobalFontService } from '../../services/global-font.service';
 
 @Component({
   selector: 'app-header',
@@ -65,8 +66,10 @@ import { FontSelectorToggleService } from '../../services/font-selector-toggle.s
 export class HeaderComponent {
   #darkModeService = inject(DarkModeService)
   #fontSelectorService = inject(FontSelectorToggleService)
+  #fontService = inject(GlobalFontService)
 
   public darkMode = this.#darkModeService.getDarkMode
+  public font = this.#fontService.getFont
 
   public darkModeToggle() {
     this.#darkModeService.toggleDarkMode()

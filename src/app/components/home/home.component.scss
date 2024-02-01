@@ -1,1 +1,9 @@
-
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vw;
+  display: flex;
+  background-color: transparent;
+  top: 0;
+  right: 0;
+}

@@ -5,7 +5,13 @@
     </div>
     <div class="config">
       <div (click)="toggleFontSelector()" [@darkModeLine]="darkMode()" class="select-font">
-        <span [@darkModeToggleTextHeader]="darkMode()">Sans Serif</span>
+        @if(font() === 'inter') {
+          <span [@darkModeToggleTextHeader]="darkMode()">Sans Serif</span>
+        } @else if (font() === 'lora') {
+          <span [@darkModeToggleTextHeader]="darkMode()">Serif</span>
+        } @else {
+          <span [@darkModeToggleTextHeader]="darkMode()">Mono</span>
+        }
         <img ngSrc="./assets/images/icon-arrow-down.svg" alt="arrow down icon" width="12" height="6">
       </div>
       <div (click)="darkModeToggle()" class="toggle-rect" [@darkModeToggleRect]="darkMode()">

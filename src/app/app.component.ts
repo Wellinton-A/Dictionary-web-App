@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { animate, animateChild, group, query, state, style, transition, trigger } from '@angular/animations';
 import { DarkModeService } from './services/dark-mode.service';
+import { GlobalFontService } from './services/global-font.service';
 
 @Component({
   selector: 'app-root',
@@ -45,6 +46,8 @@ export class AppComponent {
   title = 'dictionary-web-app';
 
   #darkModeService = inject(DarkModeService)
+  #fontService = inject(GlobalFontService)
 
   public darkMode = this.#darkModeService.getDarkMode
+  public actualFont = this.#fontService.getFont
 }

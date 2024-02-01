@@ -1,7 +1,8 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren, inject } from '@angular/core';
 import { DarkModeService } from '../../services/dark-mode.service';
 import { FontSelectorToggleService } from '../../services/font-selector-toggle.service';
+import { GlobalFontService } from '../../services/global-font.service';
 
 @Component({
   selector: 'font-selector',
@@ -44,18 +45,28 @@ import { FontSelectorToggleService } from '../../services/font-selector-toggle.s
       state('false', style({
         display: 'none'
       })),
-      transition('false <=> true', animate('0.1s'))
+      transition('false <=> true', animate('0s'))
     ]),
   ]
 })
 export class FontSelectorComponent {
+  @ViewChildren('fontElement') fontElement?: QueryList<ElementRef>
+
   #darkModeService = inject(DarkModeService)
   #fontSelectorService = inject(FontSelectorToggleService)
+  #fontService = inject(GlobalFontService)
 
   public darkMode = this.#darkModeService.getDarkMode
   public fontSelector = this.#fontSelectorService.getFontSelectToggle
+  public font = this.#fontService.getFont
 
-  public selectFont() {
+  public selectFont(event: MouseEvent) {
+    const element = event.target as HTMLElement
+    const fontClass = element.getAttribute('class')
+    if (fontClass) {
+      this.#fontService.setGlobalFont(fontClass)
+    }
+
     this.#fontSelectorService.toggleFontSelect()
   }
 }
