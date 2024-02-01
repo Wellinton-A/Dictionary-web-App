@@ -3,6 +3,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { DarkModeService } from '../../services/dark-mode.service';
 import { FontSelectorComponent } from '../font-selector/font-selector.component';
+import { FontSelectorToggleService } from '../../services/font-selector-toggle.service';
 
 @Component({
   selector: 'app-header',
@@ -63,10 +64,15 @@ import { FontSelectorComponent } from '../font-selector/font-selector.component'
 })
 export class HeaderComponent {
   #darkModeService = inject(DarkModeService)
+  #fontSelectorService = inject(FontSelectorToggleService)
 
   public darkMode = this.#darkModeService.getDarkMode
 
   public darkModeToggle() {
     this.#darkModeService.toggleDarkMode()
+  }
+
+  public toggleFontSelector() {
+    this.#fontSelectorService.toggleFontSelect()
   }
 }

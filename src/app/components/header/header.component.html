@@ -4,7 +4,7 @@
       <img ngSrc="./assets/images/logo.svg" alt="disctionary logo" width="32" height="36.5" >
     </div>
     <div class="config">
-      <div [@darkModeLine]="darkMode()" class="select-font">
+      <div (click)="toggleFontSelector()" [@darkModeLine]="darkMode()" class="select-font">
         <span [@darkModeToggleTextHeader]="darkMode()">Sans Serif</span>
         <img ngSrc="./assets/images/icon-arrow-down.svg" alt="arrow down icon" width="12" height="6">
       </div>

@@ -34,6 +34,8 @@ import { DarkModeService } from './services/dark-mode.service';
           query('@darkModeToggle', animateChild(), { optional: true }),
           query('@darkModeText', animateChild(), { optional: true }),
           query('@darkModeLine', animateChild(), { optional: true }),
+          query('@darkModeSelect', animateChild(), { optional: true }),
+          query('@darkModeShadow', animateChild(), { optional: true }),
         ])
       ])
     ]),
