@@ -47,7 +47,9 @@ export class SearchBarComponent {
   public searchWord() {
     this.#apiService.getWord(this.word.value!).subscribe({
       next: next => this.#wordService.handleWord(next[0], null),
-      error: error => this.#wordService.handleWord(null, error.error)
+      error: error => this.#wordService.handleWord(null, error.error),
+      complete: () => this.#wordService.handleAudio()
     })
+    console.log(this.#wordService.getAudio())
   }
 }

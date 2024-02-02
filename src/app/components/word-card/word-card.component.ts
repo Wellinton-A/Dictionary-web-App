@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { DarkModeService } from '../../services/dark-mode.service';
 import { NgOptimizedImage } from '@angular/common';
 import { ActualWordService } from '../../services/actual-word.service';
@@ -42,9 +42,9 @@ export class WordCardComponent {
   public errorMessage = this.#wordService.getError
   public word = this.#wordService.getWord
   public audio = this.#wordService.getAudio
+  public isLoading = this.#wordService.getIsLoading
 
   async playAudio() {
-    this.#wordService.handleAudio()
     const newAudio = new Audio();
     newAudio.src = this.audio()!
     newAudio.load()
