@@ -3,7 +3,6 @@ import { Component, inject, signal } from '@angular/core';
 import { DarkModeService } from '../../services/dark-mode.service';
 import { NgOptimizedImage } from '@angular/common';
 import { ActualWordService } from '../../services/actual-word.service';
-import { Word } from '../../../interfaces/word.interface';
 
 @Component({
   selector: 'word-card',
@@ -29,6 +28,15 @@ import { Word } from '../../../interfaces/word.interface';
       })),
       state('false', style({
         borderColor: '#E9E9E9'
+      })),
+      transition('false <=> true', animate('0.5s')),
+    ]),
+    trigger('darkModeLoading', [
+      state('true', style({
+        borderTopColor: '#050505q'
+      })),
+      state('false', style({
+        borderTopColor: '#FFFFFF'
       })),
       transition('false <=> true', animate('0.5s')),
     ])

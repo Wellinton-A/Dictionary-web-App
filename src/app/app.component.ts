@@ -37,6 +37,7 @@ import { GlobalFontService } from './services/global-font.service';
           query('@darkModeLine', animateChild(), { optional: true }),
           query('@darkModeSelect', animateChild(), { optional: true }),
           query('@darkModeShadow', animateChild(), { optional: true }),
+          query('@darkModeLoading', animateChild(), { optional: true }),
         ])
       ])
     ]),

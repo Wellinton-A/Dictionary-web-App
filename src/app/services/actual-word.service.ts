@@ -23,15 +23,15 @@ export class ActualWordService {
     console.log(this.#setWord())
     setTimeout(() => {
       this.#setIsLoading.set(false)
-    }, 2000)
+    }, 1300)
   }
 
   public handleAudio() {
     for(let i = 0; this.getWord()?.phonetics.length! > i; i++ ) {
-      console.log(this.#setAudio())
       if(this.getWord()?.phonetics[i].audio.length! > 1) {
         return this.#setAudio.set(this.getWord()?.phonetics[i].audio!)
       }
+      console.log(this.#setAudio())
     }
     this.#setAudio.set(null)
   }

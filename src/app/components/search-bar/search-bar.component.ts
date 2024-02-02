@@ -45,11 +45,13 @@ export class SearchBarComponent {
   public word = new FormControl<string>('')
 
   public searchWord() {
-    this.#apiService.getWord(this.word.value!).subscribe({
-      next: next => this.#wordService.handleWord(next[0], null),
-      error: error => this.#wordService.handleWord(null, error.error),
-      complete: () => this.#wordService.handleAudio()
-    })
+    if(this.#wordService.getWord()?.word !== this.word.value) {
+      this.#apiService.getWord(this.word.value!).subscribe({
+        next: next => this.#wordService.handleWord(next[0], null),
+        error: error => this.#wordService.handleWord(null, error.error),
+        complete: () => this.#wordService.handleAudio()
+      })
+    }
     console.log(this.#wordService.getAudio())
   }
 }
