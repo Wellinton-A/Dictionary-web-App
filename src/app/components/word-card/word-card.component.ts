@@ -43,4 +43,11 @@ export class WordCardComponent {
   public errorMessage = this.#wordService.getError
 
   public darkMode = this.#darkModeService.getDarkMode
+
+  public playAudio() {
+    let audio = new Audio();
+    audio.src = this.word()?.phonetics[0].audio!
+    audio.load()
+    audio.play()
+  }
 }

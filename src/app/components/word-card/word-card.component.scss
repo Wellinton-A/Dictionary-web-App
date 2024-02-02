@@ -130,3 +130,29 @@
     font-weight: 700;
   }
 }
+
+.bad-req-container {
+  max-width: 736px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    margin-top: 89px;
+    margin-bottom: 44px;
+  }
+
+  h3 {
+    font-size: 20px;
+    color: $tertiary-black;
+  }
+
+  p {
+    text-align: center;
+    margin-top: 24px;
+    color: $primary-grey;
+  }
+}

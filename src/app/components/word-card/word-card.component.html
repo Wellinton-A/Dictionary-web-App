@@ -1,60 +1,70 @@
 <section class="card-section">
-  <div class="dict-container">
-    <div class="play-word-container">
-      <div class="word">
-        <h2 class="heading-l" [@darkModeText]="darkMode()">{{ word()?.word }}</h2>
-        <span class="phonetic heading-m">{{ word()?.phonetic }}</span>
-      </div>
-      <div class="play-container">
-        <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75">
-          <g fill="#A445ED" fill-rule="evenodd">
-            <circle cx="37.5" cy="37.5" r="37.5" opacity=".25"/>
-            <path d="M29 27v21l21-10.5z"/>
-          </g>
-        </svg>
-      </div>
-    </div>
-    @for (item of word()?.meanings; track $index) {
-      <div class="noun-container">
-        <div class="noun-title">
-          <h3 class="heading-m" [@darkModeText]="darkMode()">{{item.partOfSpeech}}</h3>
-          <div class="line" [@darkModeLine]="darkMode()"></div>
+  @if(word()) {
+    <div class="dict-container">
+      <div class="play-word-container">
+        <div class="word">
+          <h2 class="heading-l" [@darkModeText]="darkMode()">{{ word()?.word }}</h2>
+          <span class="phonetic heading-m">{{ word()?.phonetic }}</span>
         </div>
-        <div class="meaning-container">
-          <h3 class="heading-s">Meaning</h3>
-          <ul>
-            @for(item1 of item.definitions; track item1) {
-              <li [@darkModeText]="darkMode()" class="body-m">
-                {{ item1.definition }}
-              </li>
-              <p class="body-m">
-                {{ item1.example }}
-              </p>
-            }
-          </ul>
+        <div (click)="playAudio()" class="play-container">
+          <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75">
+            <g fill="#A445ED" fill-rule="evenodd">
+              <circle cx="37.5" cy="37.5" r="37.5" opacity=".25"/>
+              <path d="M29 27v21l21-10.5z"/>
+            </g>
+          </svg>
         </div>
-        @if(item.synonyms.length >= 1) {
-          <div class="synonyms-container">
-            <h3 class="heading-s">
-              Synonyms
-            </h3>
-            <div class="syn-word">
-                @for (item2 of item.synonyms; track $index) {
-                    <span>
-                      {{ item2 }}
-                    </span>
-                  }
-            </div>
+      </div>
+      @for (item of word()?.meanings; track $index) {
+        <div class="noun-container">
+          <div class="noun-title">
+            <h3 class="heading-m" [@darkModeText]="darkMode()">{{item.partOfSpeech}}</h3>
+            <div class="line" [@darkModeLine]="darkMode()"></div>
           </div>
-        }
+          <div class="meaning-container">
+            <h3 class="heading-s">Meaning</h3>
+            <ul>
+              @for(item1 of item.definitions; track item1) {
+                <li [@darkModeText]="darkMode()" class="body-m">
+                  {{ item1.definition }}
+                </li>
+                <p class="body-m">
+                  {{ item1.example }}
+                </p>
+              }
+            </ul>
+          </div>
+          @if(item.synonyms.length >= 1) {
+            <div class="synonyms-container">
+              <h3 class="heading-s">
+                Synonyms
+              </h3>
+              <div class="syn-word">
+                  @for (item2 of item.synonyms; track $index) {
+                      <span>
+                        {{ item2 }}
+                      </span>
+                    }
+              </div>
+            </div>
+          }
+        </div>
+      }
+      <div class="source-container" [@darkModeLine]="darkMode()">
+        <h4 class="body-s source-title">
+          Source
+        </h4>
+        <a [@darkModeText]="darkMode()" class="body-s" href="">{{ word()?.sourceUrls }}</a>
+        <img ngSrc="./assets/images/icon-new-window.svg" alt="icon new windown" width="12" height="12">
       </div>
-    }
-    <div class="source-container" [@darkModeLine]="darkMode()">
-      <h4 class="body-s source-title">
-        Source
-      </h4>
-      <a [@darkModeText]="darkMode()" class="body-s" href="">{{ word()?.sourceUrls }}</a>
-      <img ngSrc="./assets/images/icon-new-window.svg" alt="icon new windown" width="12" height="12">
     </div>
-  </div>
+  } @else if (errorMessage()) {
+    <div class="bad-req-container">
+      <img ngSrc="./assets/images/bad-req.png" alt="sad emoji image" width="64" height="64">
+      <h3 [@darkModeText]="darkMode()">
+        No Definitions Found
+      </h3>
+      <p class="body-m">{{errorMessage()?.message}} {{errorMessage()?.resolution}}</p>
+    </div>
+  }
 </section>
