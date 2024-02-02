@@ -43,11 +43,11 @@ export class WordCardComponent {
   public word = this.#wordService.getWord
   public audio = this.#wordService.getAudio
 
-  public playAudio() {
+  async playAudio() {
     this.#wordService.handleAudio()
     const newAudio = new Audio();
     newAudio.src = this.audio()!
     newAudio.load()
-    newAudio.play()
+    await newAudio.play()
   }
 }

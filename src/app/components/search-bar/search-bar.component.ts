@@ -4,12 +4,14 @@ import { Component, inject } from '@angular/core';
 import { DarkModeService } from '../../services/dark-mode.service';
 import { ApiService } from '../../services/api.service';
 import { ActualWordService } from '../../services/actual-word.service';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'search-bar',
   standalone: true,
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    ReactiveFormsModule
   ],
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.scss',
@@ -40,9 +42,10 @@ export class SearchBarComponent {
   #wordService = inject(ActualWordService)
 
   public darkMode = this.#darkModeService.getDarkMode
+  public word = new FormControl<string>('')
 
   public searchWord() {
-    this.#apiService.getWord('place').subscribe({
+    this.#apiService.getWord(this.word.value!).subscribe({
       next: next => this.#wordService.handleWord(next[0], null),
       error: error => this.#wordService.handleWord(null, error.error)
     })
