@@ -5,6 +5,7 @@ import { DarkModeService } from '../../services/dark-mode.service';
 import { FontSelectorComponent } from '../font-selector/font-selector.component';
 import { FontSelectorToggleService } from '../../services/font-selector-toggle.service';
 import { GlobalFontService } from '../../services/global-font.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-header',

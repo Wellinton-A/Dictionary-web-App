@@ -1,7 +1,7 @@
 <section class="search-bar-section">
   <div [@darkModeSearchBarBg]="darkMode()" class="search-container">
     <input [@darkModeSearchBarTxt]="darkMode()" class="main-search" type="text">
-    <div class="search-icon">
+    <div (click)="searchWord()" class="search-icon">
       <img ngSrc="./assets/images/icon-search.svg" alt="icon search light mode" width="15.55" height="15.55">
     </div>
   </div>

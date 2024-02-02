@@ -2,6 +2,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component, inject } from '@angular/core';
 import { DarkModeService } from '../../services/dark-mode.service';
 import { NgOptimizedImage } from '@angular/common';
+import { ActualWordService } from '../../services/actual-word.service';
+import { Word } from '../../../interfaces/word.interface';
 
 @Component({
   selector: 'word-card',
@@ -34,6 +36,11 @@ import { NgOptimizedImage } from '@angular/common';
 })
 export class WordCardComponent {
   #darkModeService = inject(DarkModeService)
+  #wordService = inject(ActualWordService)
+
+  public word = this.#wordService.getWord
+
+  public errorMessage = this.#wordService.getError
 
   public darkMode = this.#darkModeService.getDarkMode
 }

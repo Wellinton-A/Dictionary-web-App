@@ -2,6 +2,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { NgOptimizedImage } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { DarkModeService } from '../../services/dark-mode.service';
+import { ApiService } from '../../services/api.service';
+import { ActualWordService } from '../../services/actual-word.service';
 
 @Component({
   selector: 'search-bar',
@@ -34,6 +36,15 @@ import { DarkModeService } from '../../services/dark-mode.service';
 })
 export class SearchBarComponent {
   #darkModeService = inject(DarkModeService)
+  #apiService = inject(ApiService)
+  #wordService = inject(ActualWordService)
 
   public darkMode = this.#darkModeService.getDarkMode
+
+  public searchWord() {
+    this.#apiService.getWord('cat').subscribe({
+      next: next => this.#wordService.handleWord(next[0], null),
+      error: error => this.#wordService.handleWord(null, error.error)
+    })
+  }
 }

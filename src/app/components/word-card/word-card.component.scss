@@ -75,9 +75,10 @@
     color: $purple;
   }
 
-  span {
+  p {
     color: $primary-grey;
     margin-left: 50px;
+    margin-bottom: 32px;
   }
 }
 
@@ -91,18 +92,16 @@
     margin-right: 22px;
   }
 
-  span {
-    color: $purple;
-    font-size: 20px;
-    font-weight: 700;
-  }
 }
 
 .source-container {
   display: flex;
   align-items: center;
+  margin: 0 auto;
   margin-top: 40px;
   padding-top: 20px;
+  padding-bottom: 40px;
+  max-width: 736px;
 
   border-top: solid 1px $secondary-grey;
 
@@ -118,4 +117,16 @@
 .source-title {
   color: $primary-grey;
 
+}
+
+.syn-word {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  span {
+    color: $purple;
+    font-size: 20px;
+    font-weight: 700;
+  }
 }
