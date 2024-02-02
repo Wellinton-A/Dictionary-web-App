@@ -52,6 +52,5 @@ export class SearchBarComponent {
         complete: () => this.#wordService.handleAudio()
       })
     }
-    console.log(this.#wordService.getAudio())
   }
 }

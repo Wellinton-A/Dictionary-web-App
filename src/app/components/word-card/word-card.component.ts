@@ -33,7 +33,7 @@ import { ActualWordService } from '../../services/actual-word.service';
     ]),
     trigger('darkModeLoading', [
       state('true', style({
-        borderTopColor: '#050505q'
+        borderTopColor: '#050505'
       })),
       state('false', style({
         borderTopColor: '#FFFFFF'

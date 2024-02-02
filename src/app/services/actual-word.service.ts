@@ -20,7 +20,6 @@ export class ActualWordService {
     this.#setIsLoading.set(true)
     this.#setWord.set(word)
     this.#setError.set(error)
-    console.log(this.#setWord())
     setTimeout(() => {
       this.#setIsLoading.set(false)
     }, 1300)
@@ -31,7 +30,6 @@ export class ActualWordService {
       if(this.getWord()?.phonetics[i].audio.length! > 1) {
         return this.#setAudio.set(this.getWord()?.phonetics[i].audio!)
       }
-      console.log(this.#setAudio())
     }
     this.#setAudio.set(null)
   }
