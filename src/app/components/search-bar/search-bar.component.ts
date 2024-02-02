@@ -42,7 +42,7 @@ export class SearchBarComponent {
   public darkMode = this.#darkModeService.getDarkMode
 
   public searchWord() {
-    this.#apiService.getWord('car').subscribe({
+    this.#apiService.getWord('place').subscribe({
       next: next => this.#wordService.handleWord(next[0], null),
       error: error => this.#wordService.handleWord(null, error.error)
     })

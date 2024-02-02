@@ -54,8 +54,12 @@
         <h4 class="body-s source-title">
           Source
         </h4>
-        <a [@darkModeText]="darkMode()" class="body-s" href="">{{ word()?.sourceUrls }}</a>
-        <img ngSrc="./assets/images/icon-new-window.svg" alt="icon new windown" width="12" height="12">
+        @for (item of word()?.sourceUrls; track $index) {
+            <div class="links">
+              <a [@darkModeText]="darkMode()" class="body-s" href="">{{ item }}</a>
+              <img ngSrc="./assets/images/icon-new-window.svg" alt="icon new windown" width="12" height="12">
+            </div>
+          }
       </div>
     </div>
   } @else if (errorMessage()) {

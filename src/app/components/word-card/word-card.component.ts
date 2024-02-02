@@ -38,16 +38,16 @@ export class WordCardComponent {
   #darkModeService = inject(DarkModeService)
   #wordService = inject(ActualWordService)
 
-  public word = this.#wordService.getWord
-
-  public errorMessage = this.#wordService.getError
-
   public darkMode = this.#darkModeService.getDarkMode
+  public errorMessage = this.#wordService.getError
+  public word = this.#wordService.getWord
+  public audio = this.#wordService.getAudio
 
   public playAudio() {
-    let audio = new Audio();
-    audio.src = this.word()?.phonetics[0].audio!
-    audio.load()
-    audio.play()
+    this.#wordService.handleAudio()
+    const newAudio = new Audio();
+    newAudio.src = this.audio()!
+    newAudio.load()
+    newAudio.play()
   }
 }
