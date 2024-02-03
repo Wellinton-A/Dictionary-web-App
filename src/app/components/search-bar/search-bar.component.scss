@@ -1,6 +1,5 @@
 @import '../../../color-variables.scss';
 
-
 .search-bar-section {
   padding-bottom: 43px;
 }
@@ -40,8 +39,10 @@
   }
 }
 
-
-
 .search-icon {
   cursor: pointer;
+}
+
+.invalid-field {
+  border: solid 1px $orange;
 }
