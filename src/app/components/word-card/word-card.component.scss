@@ -15,15 +15,32 @@
   .phonetic {
     color: $purple;
   }
+
+  @media (max-width: 1023px) {
+    max-width: 90%;
+  }
+
+  @media (max-width: 637px) {
+  }
 }
 
 .play-container {
   position: relative;
   width: 75px;
   height: 75px;
+
+  @media (max-width: 637px) {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 .play-icon {
+  @media (max-width: 637px) {
+    width: 48px;
+    height: 48px;
+  }
+
   transition: fill 0.5s ease, opacity 0.5s ease;
 }
 
@@ -41,6 +58,13 @@
   max-width: 736px;
   margin: 40px auto;
 
+  @media (max-width: 1023px) {
+    max-width: 90%;
+  }
+
+  @media (max-width: 637px) {
+    margin-top: 32px;
+  }
 }
 
 .noun-title {
@@ -69,6 +93,10 @@
     margin-left: 42px;
     margin-bottom: 12px;
     padding-left: 10px;
+
+    @media (max-width: 637px) {
+      margin-left: 14px;
+    }
   }
 
   ul li::marker {
@@ -79,6 +107,10 @@
     color: $primary-grey;
     margin-left: 50px;
     margin-bottom: 32px;
+  }
+
+  @media (max-width: 637px) {
+    margin-top: 32px;
   }
 }
 
@@ -122,6 +154,10 @@
       margin-right: 24px;
     }
   }
+
+  @media (max-width: 1023px) {
+    max-width: 90%;
+  }
 }
 
 .source-title {
@@ -138,6 +174,10 @@
     color: $purple;
     font-size: 20px;
     font-weight: 700;
+
+    @media (max-width: 637px) {
+      font-size: 1rem;
+    }
   }
 }
 

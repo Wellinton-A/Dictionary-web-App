@@ -2,6 +2,15 @@
 
 .search-bar-section {
   padding-bottom: 43px;
+
+  @media (max-width: 1023px) {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 637px) {
+    padding-bottom: 24px;
+  }
 }
 
 .invalid-field {
@@ -29,6 +38,15 @@
   &:focus-within {
     border: solid 1px $purple;
   }
+
+  @media (max-width: 1023px) {
+  }
+
+  @media (max-width: 637px) {
+    padding: 16px 24px;
+    height: 48px;
+    margin-top: 24px;
+  }
 }
 
 .main-search {
@@ -41,6 +59,13 @@
 
   &:focus {
     outline: none;
+  }
+
+  @media (max-width: 1023px) {
+  }
+
+  @media (max-width: 637px) {
+    font-size: 1rem;
   }
 }
 

@@ -4,6 +4,10 @@
   position: relative;
   max-width: 736px;
   margin: 0 auto;
+
+  @media (max-width: 1023px) {
+    max-width: 90%;
+  }
 }
 
 .head {
@@ -18,6 +22,15 @@
   .config {
     display: flex;
     justify-self: flex-end;
+  }
+}
+
+.logo {
+
+  @media (max-width: 637px) {
+    width: 28px;
+    height: 32px;
+
   }
 }
 
@@ -36,6 +49,17 @@
 
   cursor: pointer;
   border-right: 1px solid $secondary-grey;
+
+  @media (max-width: 1023px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 637px) {
+    font-size: 14px;
+    gap: 16px;
+    margin-right: 16px;
+    padding: 0 16px;
+  }
 }
 
 .toggle-rect {
@@ -47,6 +71,15 @@
   background-color: #979797;
 
   cursor: pointer;
+
+  @media (max-width: 1023px) {
+
+  }
+
+  @media (max-width: 637px) {
+    gap: 16px;
+    margin-right: 12px;
+  }
 }
 
 .toggle-circ {

@@ -18,6 +18,10 @@
   font-weight: 700;
   color: $tertiary-black;
 
+  @media (max-width: 637px) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
 }
 
 
@@ -26,6 +30,10 @@
   line-height: 1.813rem;
   color: $tertiary-black;
 
+  @media (max-width: 637px) {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
 }
 
 .heading-s {
@@ -33,6 +41,10 @@
   line-height: 1.5rem;
   color: $primary-grey;
 
+  @media (max-width: 637px) {
+    font-size: 1rem;
+    line-height: auto;
+  }
 }
 
 .body-m {
@@ -40,6 +52,10 @@
   line-height: 1.5rem;
   color: $tertiary-black;
 
+  @media (max-width: 637px) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 .body-s {
