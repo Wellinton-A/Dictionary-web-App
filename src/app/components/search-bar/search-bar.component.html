@@ -1,9 +1,9 @@
 <section class="search-bar-section">
   <div [@darkModeSearchBarBg]="darkMode()" [class.invalid-field]="!validField()" class="search-container">
-    <input (blur)="onInputBlur()" placeholder="Type a word..." id="word" type="text" [formControl]="word" [@darkModeSearchBarTxt]="darkMode()" class="main-search" type="text">
+    <input (focus)="onInputFocus()" (blur)="onInputBlur()" placeholder="Type a word..." id="word" type="text" [formControl]="word" [@darkModeSearchBarTxt]="darkMode()" class="main-search" type="text">
     <div (click)="searchWord()" class="search-icon">
       <img ngSrc="./assets/images/icon-search.svg" alt="icon search light mode" width="15.55" height="15.55">
     </div>
+    <p [@showInvalidFieldMessage]="!validField()" class="invalid-message heading-s">Whoops, can't be empty...</p>
   </div>
-  <p></p>
 </section>

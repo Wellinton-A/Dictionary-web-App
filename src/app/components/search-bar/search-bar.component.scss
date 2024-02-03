@@ -4,6 +4,10 @@
   padding-bottom: 43px;
 }
 
+.invalid-field {
+  border: solid 1px $orange;
+}
+
 .search-container {
   display: flex;
   justify-content: space-between;
@@ -13,6 +17,7 @@
   padding: 20px 24px;
   height: 64px;
   width: 100%;
+  position: relative;
 
   background-color: $tertiary-grey;
 
@@ -43,6 +48,11 @@
   cursor: pointer;
 }
 
-.invalid-field {
-  border: solid 1px $orange;
+.invalid-message {
+  color: $orange;
+  position: absolute;
+  bottom: -24px;
+  display: none;
 }
+
+

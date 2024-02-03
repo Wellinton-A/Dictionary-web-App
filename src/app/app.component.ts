@@ -28,6 +28,7 @@ import { GlobalFontService } from './services/global-font.service';
       transition('false <=> true', [
         group([
           query('@darkModeToggleTextHeader', animateChild(), { optional: true }),
+          query('@showInvalidFieldMessage', animateChild(), { optional: true }),
           query('@darkModeSearchBarTxt', animateChild(), { optional: true }),
           query('@darkModeSearchBarBg', animateChild(), { optional: true }),
           query('@darkModeToggleRect', animateChild(), { optional: true }),

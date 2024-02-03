@@ -34,6 +34,16 @@ import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
       })),
       transition('false <=> true', animate('0.5s'))
     ]),
+    ,
+    trigger('showInvalidFieldMessage', [
+      state('true', style({
+        display: 'flex'
+      })),
+      state('false', style({
+        display: 'none'
+      })),
+      transition('false <=> true', animate('0s'))
+    ]),
   ]
 })
 export class SearchBarComponent {
@@ -46,22 +56,31 @@ export class SearchBarComponent {
     Validators.required
   )
   public darkMode = this.#darkModeService.getDarkMode
+
   public validField = signal<boolean>(true)
+  public lastWordResearch = signal<string | null>(null)
 
   public searchWord() {
     if(!this.word.valid) {
       this.validField.set(!this.validField())
     }
-    if(this.#wordService.getWord()?.word !== this.word.value && this.word.valid) {
+
+    if(this.lastWordResearch() !== this.word.value && this.word.valid) {
       this.#apiService.getWord(this.word.value!).subscribe({
         next: next => this.#wordService.handleWord(next[0], null),
         error: error => this.#wordService.handleWord(null, error.error),
         complete: () => this.#wordService.handleAudio()
       })
+      this.lastWordResearch.set(this.word.value)
     }
   }
 
   public onInputBlur() {
     this.validField.set(true)
   }
+
+  public onInputFocus() {
+    this.validField.set(true)
+  }
+
 }
